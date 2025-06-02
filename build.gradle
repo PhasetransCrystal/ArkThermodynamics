@@ -18,6 +18,14 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        name 'IzzelAliz Maven'
+        url 'https://maven.izzel.io/releases/'
+    }
+    maven {
+        name 'Curse Maven'
+        url = "https://www.cursemaven.com"
+    }
 }
 
 base {
@@ -109,30 +117,24 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 // "optional", meaning it will not be pulled by dependents of this mod.
 configurations {
     runtimeClasspath.extendsFrom localRuntime
+    libraries
+    // This will make sure that all dependencies that you add to the libraries configuration will also be added to the implementation configuration
+    // This way, you only need one dependency declaration for both runtime and compile dependencies
+    implementation.extendsFrom libraries
 }
 
 dependencies {
-    // Example optional mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
-    // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
-    // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    // Modern UI core framework
+    libraries "icyllis.modernui:ModernUI-Core:3.11.0"
+// Modern UI core extensions
+    libraries "icyllis.modernui:ModernUI-Markdown:3.11.0"
+// Modern UI for Minecraft Forge
+    compileOnly "curse.maven:modern-ui-352491:5040141"
+    runtimeOnly "curse.maven:modern-ui-352491:5040141"
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
+    implementation files('libs/brea_metal-1.0.0.jar')
+    implementation files('libs/breathermodynamics-1.0.0.jar')
 
-    // Example mod dependency using a file as dependency
-    // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
-
-    // Example project dependency using a sister or child project:
-    // implementation project(":myproject")
-
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
