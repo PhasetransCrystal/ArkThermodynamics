@@ -1,8 +1,7 @@
-package com.landis.breakdowncore.module.fluid;
+package com.phasetranscrystal.ark_thermodynamics.fluid;
 
 import com.google.common.collect.ImmutableList;
 import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import org.apache.commons.lang3.function.ToBooleanBiFunction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
@@ -78,7 +77,9 @@ public class FluidContainer implements IMultiSlotFluidHandler {
         if (fluid.getAmount() < drained) {
             drained = fluid.getAmount();
         }
-        FluidStack stack = new FluidStack(fluid, drained);
+        //TODO Fluid fix 1
+        FluidStack stack = fluid.copy();
+        stack.setAmount(drained);
         if (action.execute() && drained > 0) {
             fluid.shrink(drained);
             onContentsChanged(slot);
@@ -88,6 +89,7 @@ public class FluidContainer implements IMultiSlotFluidHandler {
 
     @Override
     public FluidStack drain(int slot, FluidStack resource, FluidAction action) {
+        //TODO Fluid fix 2
         if (resource.isEmpty() || !resource.isFluidEqual(getFluidInTank(slot))) {
             return FluidStack.EMPTY;
         }
@@ -111,7 +113,8 @@ public class FluidContainer implements IMultiSlotFluidHandler {
             return Math.min(capacity - fluid.getAmount(), resource.getAmount());
         }
         if (fluid.isEmpty()) {
-            fluid = new FluidStack(resource, Math.min(capacity, resource.getAmount()));
+            fluid = resource.copy();
+            fluid.setAmount(resource.getAmount());
             onContentsChanged(slot);
             return fluid.getAmount();
         }

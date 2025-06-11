@@ -1,7 +1,6 @@
-package com.landis.breakdowncore.module.fluid;
+package com.phasetranscrystal.ark_thermodynamics.fluid;
 
 import net.neoforged.neoforge.fluids.IFluidTank;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
 public class FluidSlot implements IFluidSlot {
     public int index = -1;

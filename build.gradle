@@ -125,12 +125,8 @@ configurations {
 
 dependencies {
     // Modern UI core framework
-    libraries "icyllis.modernui:ModernUI-Core:3.11.0"
-// Modern UI core extensions
-    libraries "icyllis.modernui:ModernUI-Markdown:3.11.0"
-// Modern UI for Minecraft Forge
-    compileOnly "curse.maven:modern-ui-352491:5040141"
-    runtimeOnly "curse.maven:modern-ui-352491:5040141"
+    implementation "curse.maven:modern-ui-352491:6200236"
+
 
     implementation files('libs/brea_metal-1.0.0.jar')
     implementation files('libs/breathermodynamics-1.0.0.jar')
