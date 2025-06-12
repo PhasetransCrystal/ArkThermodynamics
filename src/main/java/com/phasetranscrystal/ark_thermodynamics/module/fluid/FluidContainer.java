@@ -1,4 +1,4 @@
-package com.phasetranscrystal.ark_thermodynamics.fluid;
+package com.phasetranscrystal.ark_thermodynamics.module.fluid;
 
 import com.google.common.collect.ImmutableList;
 import net.neoforged.neoforge.fluids.FluidStack;

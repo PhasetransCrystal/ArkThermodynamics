@@ -1,4 +1,4 @@
-package com.phasetranscrystal.ark_thermodynamics.fluid;
+package com.phasetranscrystal.ark_thermodynamics.module.fluid;
 
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;

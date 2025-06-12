@@ -1,4 +1,4 @@
-package com.phasetranscrystal.ark_thermodynamics.fluid;
+package com.phasetranscrystal.ark_thermodynamics.module.fluid;
 
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
