@@ -1,8 +1,8 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.item;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.mui.abs.ItemWidget;
-import com.landis.breakdowncore.helper.RenderHelper;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
+import com.phasetranscrystal.ark_thermodynamics.mui.abs.ItemWidget;
+import com.phasetranscrystal.ark_thermodynamics.helper.RenderHelper;
 import icyllis.modernui.animation.ObjectAnimator;
 import icyllis.modernui.animation.ValueAnimator;
 import icyllis.modernui.core.Context;
@@ -22,7 +22,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
 public class ContainerItemViewAlpha extends ItemWidget {
-    public static final Image FOREGROUND = Image.create(Arkdust.MODID, "gui/slots/container_alpha.png");
+    public static final Image FOREGROUND = Image.create(ArkThermodynamics.MODID, "gui/slots/container_alpha.png");
 
     public final Paint EDGE_PAINT = new Paint();
 

@@ -1,8 +1,8 @@
 package com.phasetranscrystal.ark_thermodynamics.mui;
 
-import com.landis.arkdust.mui.abs.IMenu2ScreenNotifiable;
-import com.landis.breakdowncore.module.menu.ExpandedContainerMenu;
-import com.landis.breakdowncore.module.blockentity.gmui.IMenuChangeNotify;
+import com.phasetranscrystal.ark_thermodynamics.mui.abs.IMenu2ScreenNotifiable;
+import com.phasetranscrystal.ark_thermodynamics.module.menu.ExpandedContainerMenu;
+import com.phasetranscrystal.ark_thermodynamics.module.blockentity.gmui.IMenuChangeNotify;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;

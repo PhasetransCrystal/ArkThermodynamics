@@ -1,7 +1,7 @@
 package com.phasetranscrystal.ark_thermodynamics.mui;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.helper.MUIHelper;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
+import com.phasetranscrystal.ark_thermodynamics.helper.MUIHelper;
 import icyllis.arc3d.core.Color;
 import icyllis.modernui.fragment.Fragment;
 import icyllis.modernui.graphics.Canvas;
@@ -60,7 +60,7 @@ public abstract class AbstractArkdustInfoUI extends Fragment {
         {//顶部组件部分
             RelativeLayout topLayout = new RelativeLayout(getContext());
             MUIHelper.drawStringAt(getContext(), topLayout, "//" + I18n.get(getTitle()), Color.WHITE, 20, 35, 10);
-            MUIHelper.drawImage(getContext(), topLayout, new ResourceLocation(Arkdust.MODID, "gui/element/endfield.png"), 20, -20, 120, 106).left();
+            MUIHelper.drawImage(getContext(), topLayout, ResourceLocation.fromNamespaceAndPath(ArkThermodynamics.MODID, "gui/element/endfield.png"), 20, -20, 120, 106).left();
             MUIHelper.Widgets.addCloseButton(getContext(), topLayout, this);
             base.addView(topLayout);
         }
@@ -73,7 +73,7 @@ public abstract class AbstractArkdustInfoUI extends Fragment {
     public abstract String getTitle();
 
     public ResourceLocation getBackground(){
-        return new ResourceLocation(Arkdust.MODID,"gui/element/background.png");
+        return ResourceLocation.fromNamespaceAndPath(ArkThermodynamics.MODID,"gui/element/background.png");
     }
 
     public void addView(LayoutInflater inflater,RelativeLayout layout,DataSet dataSet){

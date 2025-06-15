@@ -1,4 +1,4 @@
-package com.landis.breakdowncore.module.menu;
+package com.phasetranscrystal.ark_thermodynamics.module.menu;
 
 import net.minecraft.world.inventory.DataSlot;
 

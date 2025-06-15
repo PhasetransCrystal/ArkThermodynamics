@@ -1,9 +1,9 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.abs;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.mui.mouse.BaseMouseInfo;
-import com.landis.arkdust.network.SynMenuSlotClick;
-import com.landis.breakdowncore.helper.ContainerHelper;
+import com.phasetranscrystal.ark_thermodynamics.mui.mouse.BaseMouseInfo;
+import com.phasetranscrystal.ark_thermodynamics.network.SynMenuSlotClick;
+import com.phasetranscrystal.ark_thermodynamics.helper.ContainerHelper;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
 import icyllis.modernui.core.Context;
 import icyllis.modernui.graphics.Canvas;
 import icyllis.modernui.graphics.Image;
@@ -26,8 +26,8 @@ import javax.annotation.Nonnull;
 
 
 public abstract class ItemWidget extends RelativeLayout {
-    public static final Image SLOT_BACKGROUND = Image.create(Arkdust.MODID, "gui/slots/background.png");
-    public static final Image SLOT_HOVER = Image.create(Arkdust.MODID, "gui/slots/hovering.png");
+    public static final Image SLOT_BACKGROUND = Image.create(ArkThermodynamics.MODID, "gui/slots/background.png");
+    public static final Image SLOT_HOVER = Image.create(ArkThermodynamics.MODID, "gui/slots/hovering.png");
     public final Slot slot;
     public final float width;
     public final AbstractContainerMenu menu;

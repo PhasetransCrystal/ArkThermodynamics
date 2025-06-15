@@ -1,6 +1,6 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.item;
 
-import com.landis.arkdust.mui.abs.ItemWidget;
+import com.phasetranscrystal.ark_thermodynamics.mui.abs.ItemWidget;
 import icyllis.modernui.animation.ObjectAnimator;
 import icyllis.modernui.core.Context;
 import icyllis.modernui.graphics.Canvas;

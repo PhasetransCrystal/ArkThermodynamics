@@ -1,7 +1,7 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.button;
 
-import com.landis.arkdust.helper.MUIHelper;
-import com.landis.arkdust.mui.AbstractArkdustInfoUI;
+import com.phasetranscrystal.ark_thermodynamics.helper.MUIHelper;
+import com.phasetranscrystal.ark_thermodynamics.mui.AbstractArkdustInfoUI;
 import icyllis.modernui.core.Context;
 import icyllis.modernui.view.ViewGroup;
 import icyllis.modernui.widget.Button;

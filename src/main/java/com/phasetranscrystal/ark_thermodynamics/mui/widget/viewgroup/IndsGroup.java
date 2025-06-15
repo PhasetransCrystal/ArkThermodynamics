@@ -1,7 +1,7 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.viewgroup;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.helper.MUIHelper;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
+import com.phasetranscrystal.ark_thermodynamics.helper.MUIHelper;
 import icyllis.modernui.animation.ObjectAnimator;
 import icyllis.modernui.animation.TimeInterpolator;
 import icyllis.modernui.core.Context;
@@ -25,7 +25,7 @@ import java.util.function.Supplier;
 
 public class IndsGroup extends RelativeLayout {
     public static final int TOP_H = 40;
-    public static final Image left = Image.create(Arkdust.MODID, "gui/element/ind/left_net.png");
+    public static final Image left = Image.create(ArkThermodynamics.MODID, "gui/element/ind/left_net.png");
 
 
     public final ResourceLocation id;
@@ -79,7 +79,7 @@ public class IndsGroup extends RelativeLayout {
         paraTitles.addRule(RelativeLayout.RIGHT_OF, logo.getId());
         {
             ImageView nameDec = new ImageView(context);
-            nameDec.setImage(Image.create(Arkdust.MODID, "gui/element/ind/name_dec.png"));
+            nameDec.setImage(Image.create(ArkThermodynamics.MODID, "gui/element/ind/name_dec.png"));
             LayoutParams paraNameDec = new LayoutParams(dp(TOP_H * 1.25F), dp(TOP_H * 0.25F));
             paraNameDec.setMargins(dp(TOP_H * 0.15F), dp(TOP_H / 8F), 0, 0);
             titles.addView(nameDec, paraNameDec);
@@ -126,7 +126,7 @@ public class IndsGroup extends RelativeLayout {
         int buttonCount = 0;
         {
             if (enableCloseButton) {
-                buttons.addView(new TopBarButton(context, subject + 9901, new ResourceLocation(Arkdust.MODID, "gui/element/ind/close.png"), v -> Minecraft.getInstance().execute(() -> Minecraft.getInstance().setScreen(null))), new LayoutParams(dp(TOP_H * 0.6F), dp(TOP_H * 0.6F)));
+                buttons.addView(new TopBarButton(context, subject + 9901, ResourceLocation.fromNamespaceAndPath(ArkThermodynamics.MODID, "gui/element/ind/close.png"), v -> Minecraft.getInstance().execute(() -> Minecraft.getInstance().setScreen(null))), new LayoutParams(dp(TOP_H * 0.6F), dp(TOP_H * 0.6F)));
                 buttonCount++;
             }
         }

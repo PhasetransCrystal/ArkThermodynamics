@@ -14,8 +14,8 @@ import icyllis.modernui.fragment.FragmentContainerView;
 import icyllis.modernui.fragment.FragmentTransaction;
 import icyllis.modernui.graphics.*;
 import icyllis.modernui.graphics.drawable.Drawable;
-import icyllis.modernui.graphics.font.GlyphManager;
 import icyllis.modernui.mc.MarkdownFragment;
+import icyllis.modernui.mc.text.GlyphManager;
 import icyllis.modernui.resources.SystemTheme;
 import icyllis.modernui.text.*;
 import icyllis.modernui.util.DataSet;
@@ -120,7 +120,8 @@ public class TestingScreen extends Fragment {
 
             content.setOnKeyListener((v, keyCode, event) -> {
                 if (keyCode == KeyEvent.KEY_E && event.getAction() == KeyEvent.ACTION_UP) {
-                    Core.postOnRenderThread(() ->
+                    //TODO：我寻思这东西不行吧
+                    Core.postOnUiThread(() ->
                             GlyphManager.getInstance().debug());
                     /*getParentFragmentManager().beginTransaction()
                             .replace(getId(), new FragmentB())
@@ -440,7 +441,7 @@ public class TestingScreen extends Fragment {
             canvas.drawRect(200, 450, 500, 550, paint);
 
             paint.setStrokeWidth(40.0f);
-            paint.setSmoothWidth(40.0f);
+            //paint.setSmoothWidth(40.0f);
             //canvas.drawArc(80, 400, 60, arcStart, arcStart - arcEnd, paint);
             canvas.drawArc(80, 400, 50, 60, 240, paint);
             canvas.drawBezier(80, 400, 180, 420, 80, 600, paint);
@@ -448,7 +449,7 @@ public class TestingScreen extends Fragment {
             paint.setStyle(Paint.FILL);
             canvas.drawCircle(80, 700, 60, paint);
 
-            paint.setSmoothWidth(0.0f);
+            //paint.setSmoothWidth(0.0f);
 
             paint.setStyle(Paint.FILL);
             paint.setAlpha((int) (roundRectAlpha * 192));
@@ -738,7 +739,7 @@ public class TestingScreen extends Fragment {
                 float b = 1.5f + MathUtil.sin(time / 600f) / 2;
                 paint.setRGBA(160, 155, 230, (int) (64 * b));
                 paint.setStrokeWidth(200);
-                paint.setSmoothWidth(200);
+                //paint.setSmoothWidth(200);
                 paint.setStyle(Paint.STROKE);
                 canvas.drawCircle(cx, cy, 130, paint);
                 paint.reset();

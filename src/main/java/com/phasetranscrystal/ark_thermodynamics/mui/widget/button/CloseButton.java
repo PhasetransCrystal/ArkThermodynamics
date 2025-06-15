@@ -1,6 +1,6 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.button;
 
-import com.landis.arkdust.Arkdust;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
 import icyllis.modernui.core.Context;
 import icyllis.modernui.fragment.Fragment;
 import icyllis.modernui.graphics.drawable.ImageDrawable;
@@ -18,7 +18,7 @@ public class CloseButton extends CompoundButton {
     public CloseButton(Context context, ViewGroup base, Fragment fragment) {
         super(context);
 
-        setBackground(new ImageDrawable(Arkdust.MODID,"gui/element/close.png"));
+        setBackground(new ImageDrawable(ArkThermodynamics.MODID,"gui/element/close.png"));
 
 //        Pair<TextView, RelativeLayout.LayoutParams> textPair = MUIHelper.drawStringAt(context,base,I18n.get("gui.arkdust.element.no_close"), Color.WHITE,12, Gravity.CENTER | Gravity.TOP,0,base.dp(3),0,0);
 //        text = textPair.left();

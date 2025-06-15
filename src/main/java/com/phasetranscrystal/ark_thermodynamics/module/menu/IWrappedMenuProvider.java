@@ -1,6 +1,6 @@
-package com.landis.breakdowncore.module.menu;
+package com.phasetranscrystal.ark_thermodynamics.module.menu;
 
-import com.landis.breakdowncore.module.blockentity.container.IWrappedContainer;
+import com.phasetranscrystal.ark_thermodynamics.module.blockentity.container.IWrappedContainer;
 import net.minecraft.world.MenuProvider;
 
 public interface IWrappedMenuProvider extends MenuProvider, IWrappedContainer {

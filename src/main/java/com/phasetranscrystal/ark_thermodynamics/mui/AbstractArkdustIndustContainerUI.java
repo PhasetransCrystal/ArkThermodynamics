@@ -6,6 +6,7 @@ import com.phasetranscrystal.ark_thermodynamics.module.menu.ISlotTypeExpansion;
 import com.phasetranscrystal.ark_thermodynamics.module.menu.SlotType;
 import com.phasetranscrystal.ark_thermodynamics.mui.abs.IMenu2ScreenNotifiable;
 import com.phasetranscrystal.ark_thermodynamics.mui.abs.ItemWidget;
+import com.phasetranscrystal.ark_thermodynamics.mui.widget.viewgroup.InventoryWidgets;
 import icyllis.modernui.util.DataSet;
 import icyllis.modernui.view.LayoutInflater;
 import icyllis.modernui.view.View;

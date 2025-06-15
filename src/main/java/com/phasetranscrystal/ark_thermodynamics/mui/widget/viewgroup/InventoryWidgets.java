@@ -1,9 +1,9 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.viewgroup;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.mui.abs.ItemWidget;
-import com.landis.arkdust.mui.widget.item.ContainerItemViewAlpha;
-import com.landis.arkdust.mui.widget.item.FactoryDecoratedItemViewAlpha;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
+import com.phasetranscrystal.ark_thermodynamics.mui.abs.ItemWidget;
+import com.phasetranscrystal.ark_thermodynamics.mui.widget.item.ContainerItemViewAlpha;
+import com.phasetranscrystal.ark_thermodynamics.mui.widget.item.FactoryDecoratedItemViewAlpha;
 import icyllis.modernui.core.Context;
 import icyllis.modernui.graphics.Canvas;
 import icyllis.modernui.graphics.Paint;
@@ -32,7 +32,7 @@ public abstract class InventoryWidgets extends IndsGroup {
     protected final RelativeLayout itemsTable;
 
     public InventoryWidgets(Context context, AbstractContainerMenu menu, int itemsHeadIndex, int signLosOri) {
-        super(context, new ResourceLocation(Arkdust.MODID, "backpack"), -1, false, 0, 0.2F,300000);
+        super(context, ResourceLocation.fromNamespaceAndPath(ArkThermodynamics.MODID, "backpack"), -1, false, 0, 0.2F,300000);
         disableLeftDec();
         int signLos = dp(signLosOri);
         this.menu = menu;

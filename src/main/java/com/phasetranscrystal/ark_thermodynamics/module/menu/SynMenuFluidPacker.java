@@ -1,8 +1,8 @@
-package com.landis.breakdowncore.module.menu;
+package com.phasetranscrystal.ark_thermodynamics.module.menu;
 
-import com.landis.breakdowncore.BreakdownCore;
-import com.landis.breakdowncore.module.network.IClientCustomPacketPayload;
-import com.landis.breakdowncore.module.network.IServerCustomPacketPayload;
+import com.phasetranscrystal.ark_thermodynamics.module.network.IClientCustomPacketPayload;
+import com.phasetranscrystal.ark_thermodynamics.module.network.IServerCustomPacketPayload;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
 public record SynMenuFluidPacker(int index, FluidStack stack) implements IServerCustomPacketPayload {
-    public static final ResourceLocation ID = new ResourceLocation(BreakdownCore.MODID, "menu_syn/fluid");
+    public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ArkThermodynamics.MODID, "menu_syn/fluid");
 
     public SynMenuFluidPacker(FriendlyByteBuf byteBuf) {
         this(byteBuf.readInt(), FluidStack.loadFluidStackFromNBT(byteBuf.readNbt()));

@@ -13,7 +13,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.fluids.FluidStack;
-//import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -136,8 +135,9 @@ public abstract class ExpandedContainerMenu<T extends BlockEntity> extends Abstr
 
     //TODO 需要发包内容修理
     /**issue flag
-     * @see SynMenuFluidPacker#consume(PlayPayloadContext) 
-     * */
+     * @see //SynMenuFluidPacker#consume(PlayPayloadContext)
+     */
+
     public void fluidNetworkFeedback(int index, boolean succeed) {
         FluidStack stack = cacheFluids.set(index, FluidStack.EMPTY);
         if (succeed) {
@@ -181,7 +181,7 @@ public abstract class ExpandedContainerMenu<T extends BlockEntity> extends Abstr
 
     private void synchronizeFluidToRemote(int pSlotIndex, FluidStack pStack, Supplier<FluidStack> pSupplier) {
         FluidStack fluidStack = this.remoteFluids.get(pSlotIndex);
-        if (!fluidStack.isFluidStackIdentical(pStack)) {
+        if (!FluidStack.matches(fluidStack, pStack)) {
             FluidStack neo = pSupplier.get();
             this.cacheFluids.set(pSlotIndex, neo);
             new SynMenuFluidPacker(pSlotIndex, pStack).send(user);
@@ -190,7 +190,7 @@ public abstract class ExpandedContainerMenu<T extends BlockEntity> extends Abstr
 
     private void triggerFluidListeners(int pSlotIndex, FluidStack pStack, Supplier<FluidStack> pSupplier) {
         FluidStack fluidStack = this.lastFluids.get(pSlotIndex);
-        if (!fluidStack.isFluidStackIdentical(pStack)) {
+        if (!FluidStack.matches(fluidStack, pStack)) {
             FluidStack neo = pSupplier.get();
             this.lastFluids.set(pSlotIndex, neo);
 

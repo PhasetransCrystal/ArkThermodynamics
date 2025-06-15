@@ -1,8 +1,8 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.widget.item;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.mui.abs.ItemWidget;
-import com.landis.breakdowncore.helper.RenderHelper;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
+import com.phasetranscrystal.ark_thermodynamics.mui.abs.ItemWidget;
+import com.phasetranscrystal.ark_thermodynamics.helper.RenderHelper;
 import icyllis.modernui.core.Context;
 import icyllis.modernui.graphics.Canvas;
 import icyllis.modernui.graphics.Image;
@@ -19,7 +19,7 @@ import javax.annotation.Nonnull;
 
 
 public class FactoryDecoratedItemViewAlpha extends ItemWidget {
-    public static final Image FOREGROUND = Image.create(Arkdust.MODID, "gui/slots/factory_decorated_alpha.png");
+    public static final Image FOREGROUND = Image.create(ArkThermodynamics.MODID, "gui/slots/factory_decorated_alpha.png");
     public static final int COLOR_DAMAGE_BAR = 0xFF454545;
     public static final int COLOR_DAMAGED = 0xFF6E6E6E;
 

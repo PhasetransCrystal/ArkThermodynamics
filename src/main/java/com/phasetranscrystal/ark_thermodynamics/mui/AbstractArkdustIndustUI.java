@@ -1,7 +1,7 @@
 package com.phasetranscrystal.ark_thermodynamics.mui;
 
-import com.landis.arkdust.Arkdust;
-import com.landis.arkdust.mui.widget.viewgroup.IndsGroup;
+import com.phasetranscrystal.ark_thermodynamics.ArkThermodynamics;
+import com.phasetranscrystal.ark_thermodynamics.mui.widget.viewgroup.IndsGroup;
 import icyllis.modernui.ModernUI;
 import icyllis.modernui.audio.AudioManager;
 import icyllis.modernui.fragment.Fragment;
@@ -48,6 +48,6 @@ public class AbstractArkdustIndustUI extends Fragment {
     }
 
     public IndsGroup createIndsGroup(){
-        return new IndsGroup(getContext(),new ResourceLocation(Arkdust.MODID,"test"),2,true,200000);
+        return new IndsGroup(getContext(),ResourceLocation.fromNamespaceAndPath(ArkThermodynamics.MODID,"test"),2,true,200000);
     }
 }

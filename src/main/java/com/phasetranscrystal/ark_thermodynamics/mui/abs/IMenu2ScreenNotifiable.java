@@ -1,6 +1,6 @@
 package com.phasetranscrystal.ark_thermodynamics.mui.abs;
 
-import com.landis.breakdowncore.module.blockentity.gmui.IMenuChangeNotify;
+import com.phasetranscrystal.ark_thermodynamics.module.blockentity.gmui.IMenuChangeNotify;
 
 public interface IMenu2ScreenNotifiable {
     void bingFragment(IMenuChangeNotify fragment);
